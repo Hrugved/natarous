@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+    margin:0;
+    padding: 0;
+    /* its not inherited by default. Every elem will inherit from body where we have set its value to border-box */
+    box-sizing: inherit;
+}
+
+html {
+    //this defines the value of 1 rem
+    font-size: 62.5%; // of browser-default(16px) = 10px 
+}
+
+body{
+    box-sizing: border-box;
+}
+
