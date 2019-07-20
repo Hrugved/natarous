@@ -3,19 +3,41 @@
     max-width: $grid-width;
     // background-color: #eee;
     margin: 0 auto;
+
+    @include respond(82.25em){        
+        padding: 0 3rem;
+    }    
+
+    @include respond(tab-port){
+        max-width: $grid-width-small;
+        padding: 0 3rem;                 
+    }
     
     &:not(:last-child){  //select everything except last child
         margin-bottom: $gutter-vertical;
+
+        @include respond(tab-port){
+            margin-bottom: $gutter-vertical-small;           
+        }
     }
 
     @include clearfix;
 
-    [class^="col-"] {
+    [class^="col-"] { // select all classes with starting of "col-"
         // background-color: orangered;
         float:left;
 
         &:not(:last-child){
             margin-right: $gutter-horizontal;
+
+            @include respond(tab-port){
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+
+        @include respond(tab-port){
+            width: 100% !important;
         }
     }
 

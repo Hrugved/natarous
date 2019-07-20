@@ -10,9 +10,37 @@
 html {
     //this defines the value of 1 rem
     font-size: 62.5%; // of browser-default(16px) = 10px 
+
+    /* not neccesary
+    @include respond(phone){
+        font-size: 50%;
+    }
+    */
+
+    // remember order matters : the last one will apply in clashes
+    @include respond(tab-land){
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port){
+        font-size: 5 0%;
+    }
+
+    @include respond(big-desktop){
+        font-size: 75%;
+    }
 }
 
 body{
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-port){
+        padding: 0;
+    } 
 }
 
+::selection{
+    background-color: $color-primary;
+    color: color-white;
+}
